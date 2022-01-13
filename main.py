@@ -1,7 +1,6 @@
 import os
 import telebot
 import logging
-import psycopg2
 from config import *
 from flask import Flask, request
 
@@ -10,11 +9,11 @@ server = Flask(__name__)
 logger = telebot.logger
 logger.setLevel(logging.DEBUG)
 
-db_connection = psycopg2.connect(DB_URI, sslmode="require")
+"""db_connection = psycopg2.connect(DB_URI, sslmode="require")
 db_object = db_connection.cursor()
 
 
-"""def update_messages_count(user_id):
+def update_messages_count(user_id):
     db_object.execute(f"UPDATE users SET messages = messages + 1 WHERE id = {user_id}")
     db_connection.commit()"""
 
